@@ -1,4 +1,4 @@
-import Objects.*;
+import objects.*;
 
 /**
  * Created by Alenor on 10.03.2017.
@@ -7,21 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
         ApplicationContext context = ApplicationContext.getInstance();
+        context.loadProperties();
         try {
-            Car car = (Car) context.getBean("Objects.Car");
+            Car car = (Car) context.getBean("objects.Car");
             Engine engine = car.getEngine();
-            engine.setModel("sas");
+            System.out.println(engine.getEngineModel());
 
-            Plain plain = (Plain) context.getBean("Objects.Plain");
-            PlainEngine plainEngine = plain.getPlainEngine();
-            plainEngine.setModel("asd");
-            PlainEngineProperties prop = plainEngine.getPlainEngineProperties();
+            Plane plain = (Plane) context.getBean("objects.Plane");
+            PlaneEngine plainEngine = plain.getPlaneEngine();
+            PlaneEngineProperties prop = plainEngine.getPlaneEngineProperties();
             prop.setFuelCapacity(123);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+            System.out.println(plainEngine.getModel() + " with fuel capacity " + prop.getFuelCapacity());
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

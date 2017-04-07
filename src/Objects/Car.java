@@ -1,6 +1,6 @@
-package Objects;
+package objects;
 
-import Annotation.Autowired;
+import annotation.Autowired;
 
 /**
  * Created by Alenor on 10.03.2017.
@@ -11,7 +11,7 @@ public class Car {
     private Engine engine;
 
     public String getEngineModel() {
-        return engine.getModel();
+        return engine.getEngineModel();
     }
 
     public Engine getEngine() {

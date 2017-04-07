@@ -1,9 +1,10 @@
-package Objects;
+package objects;
 
 /**
  * Created by Alenor on 14.03.2017.
  */
-public class PlainEngineProperties {
+public class PlaneEngineProperties {
+
     private String model;
     private int maxSpeed;
     private int fuelCapacity;

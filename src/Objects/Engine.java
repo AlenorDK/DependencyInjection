@@ -1,16 +1,8 @@
-package Objects;
+package objects;
 
 /**
  * Created by Alenor on 10.03.2017.
  */
-public class Engine {
-    private String model;
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
+public interface Engine {
+    String getEngineModel();
 }
